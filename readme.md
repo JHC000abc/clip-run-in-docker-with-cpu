@@ -7,5 +7,5 @@ docker build -t clip-api-cpu:v1 .
 ```
 
 ```bash
-docker run -d --name clip-cpu-server -p 8001:8000 --restart always clip-api-cpu:v1
+docker run -itd --name clip-cpu-server -p 8001:8000 --restart always clip_server
 ```
