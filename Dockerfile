@@ -21,10 +21,6 @@ RUN uv pip install torch torchvision torchaudio --index-url https://download.pyt
 COPY requirements.txt .
 RUN uv pip install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt --system
 
-# 6. 预缓存 CLIP 模型
-# 即使是纯 CPU 环境，CLIP 依然支持无缝推理（自动 fallback 到 CPU 计算）
-RUN python -c "import clip; clip.load('ViT-B/32', device='cpu')"
-
 # 7. 复制本地的业务代码到容器中
 COPY main.py .
 

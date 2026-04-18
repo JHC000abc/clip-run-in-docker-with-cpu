@@ -3,9 +3,9 @@
 
 
 ```bash
-docker build -t clip-api-cpu:v1 .
+docker build -t clip-server .
 ```
 
 ```bash
-docker run -itd --name clip-cpu-server -p 8001:8000 --restart always clip_server
+docker run -itd --name clip-cpu-server -p 8001:8000 -v /home/jhc/shared/clip:/root/.cache/clip -e CLIP_MODEL_TYPE=768 --restart always clip-server
 ```
